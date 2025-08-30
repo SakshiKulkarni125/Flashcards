@@ -1,0 +1,169 @@
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Aesthetic pastel gradient background */
+background: linear-gradient(120deg, #c36cc3 0%, #71bcc7 50%, #e9527d 100%);
+margin: 0;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+}
+h1 {
+margin-bottom: 20px;
+color: #222;
+font-size: 2.2rem;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+h2 {
+margin: 30px 0 15px;
+color: #444;
+text-align: left;
+width: 100%;
+max-width: 1000px;
+font-size: 1.4rem;
+border-left: 6px solid #7faf81;
+padding-left: 10px;
+}
+.deck {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+width: 100%;
+max-width: 1000px;
+}
+.card {
+perspective: 1000px;
+cursor: pointer;
+transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s;
+box-shadow: 0 4px 24px rgba(76,175,80,0.15), 0 1.5px 6px rgba(0,0,0,0.08);
+border-radius: 18px;
+position: relative;
+overflow: visible;
+}
+.card:hover {
+transform: scale(1.08) rotateZ(-2deg);
+box-shadow: 0 8px 32px rgba(76,175,80,0.25), 0 3px 12px rgba(0,0,0,0.12);
+}
+.card:active {
+animation: bounce 0.3s;
+}
+@keyframes bounce {
+0% { transform: scale(1.08) rotateZ(-2deg);}
+50% { transform: scale(0.98) rotateZ(1deg);}
+100% { transform: scale(1.08) rotateZ(-2deg);}
+}
+
+.inner {
+position: relative;
+width: 100%;
+height: 200px;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+box-shadow: 0 0 0 0 #4CAF50;
+animation: pulse-shadow 2s infinite alternate;
+}
+.card.flipped .inner {
+transform: rotateY(180deg);
+}
+@keyframes pulse-shadow {
+0% { box-shadow: 0 0 0 0 #4CAF5040; }
+100% { box-shadow: 0 0 24px 8px #4CAF5040; }
+}
+
+.front, .back {
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 16px;
+box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 15px;
+backface-visibility: hidden;
+font-size: 1rem;
+transition: background 0.4s;
+overflow: hidden;
+}
+.front {
+background: linear-gradient(135deg, #ffffff 60%, #b2ff59 100%);
+color: #333;
+font-weight: bold;
+box-shadow: 0 2px 8px #b2ff5940;
+}
+.card:hover .front {
+background: linear-gradient(135deg, #f1f8e9 60%, #b2ff59 100%);
+box-shadow: 0 4px 16px #b2ff5940;
+}
+.front::after {
+content: "";
+position: absolute;
+left: 50%; top: 50%;
+width: 0; height: 0;
+background: radial-gradient(circle, #b2ff59 0%, transparent 70%);
+transform: translate(-50%, -50%);
+opacity: 0;
+transition: width 0.4s, height 0.4s, opacity 0.4s;
+z-index: 0;
+}
+.card:hover .front::after {
+width: 180px; height: 180px;
+opacity: 0.18;
+}
+.back {
+background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+color: white;
+transform: rotateY(180deg);
+font-size: 1.05rem;
+position: relative;
+}
+.back::before {
+content: "";
+position: absolute;
+left: 0; top: 0; right: 0; bottom: 0;
+background: repeating-linear-gradient(135deg, #fff2 0 2px, transparent 2px 8px);
+opacity: 0.08;
+pointer-events: none;
+z-index: 1;
+}
+.back::after {
+content: "";
+position: absolute;
+left: 50%; top: 50%;
+width: 0; height: 0;
+background: radial-gradient(circle, #67a2d8 0%, transparent 70%);
+transform: translate(-50%, -50%);
+opacity: 0;
+transition: width 0.4s, height 0.4s, opacity 0.4s;
+z-index: 0;
+}
+.card.flipped .back::after {
+width: 180px; height: 180px;
+opacity: 0.15;
+}
+
+/* Confetti dots on flip */
+.card.flipped .inner::after {
+content: "";
+position: absolute;
+left: 10%; top: 10%;
+width: 80%; height: 80%;
+pointer-events: none;
+background:
+radial-gradient(circle, #abd4a6 2px, transparent 3px),
+radial-gradient(circle, #ce89a0 2px, transparent 3px),
+radial-gradient(circle, #aed3e3 2px, transparent 3px),
+radial-gradient(circle, #b6ead1 2px, transparent 3px);
+background-size: 40px 40px;
+background-position: 0 0, 20px 10px, 10px 30px, 30px 20px;
+opacity: 0.18;
+z-index: 2;
+animation: confetti 1.2s linear;
+}
+@keyframes confetti {
+0% { opacity: 0; transform: scale(0.7);}
+30% { opacity: 0.18; transform: scale(1.1);}
+100% { opacity: 0.18; transform: scale(1);}
+}

@@ -1,0 +1,80 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📖 Interactive Flashcards</h1>
+
+  <!-- Internet & Computer Basics -->
+  <h2>🌐 Internet & Computer Basics</h2>
+  <div class="deck">
+    <div class="card"><div class="inner"><div class="front">What is the Internet?</div><div class="back">A global network connecting computers for sharing information.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is a client-server model?</div><div class="back">Client (browser) sends request → Server responds with data.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is a domain?</div><div class="back">Human-readable name for a website (example.com).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is hosting?</div><div class="back">A service that stores website files on a server.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between HTTP and HTTPS?</div><div class="back">HTTPS = secure (encrypted with SSL/TLS).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What does a browser do?</div><div class="back">Interprets HTML, CSS, JS and displays websites.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Command to list files in terminal?</div><div class="back">ls</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Command to change directory?</div><div class="back">cd folderName</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Command to create folder?</div><div class="back">mkdir folderName</div></div></div>
+  </div>
+
+  <!-- HTML Basics -->
+  <h2>🏗 HTML Basics</h2>
+  <div class="deck">
+    <div class="card"><div class="inner"><div class="front">What is the role of &lt;!DOCTYPE html&gt;?</div><div class="back">Declares document type as HTML5.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are &lt;html&gt;, &lt;head&gt;, &lt;body&gt;?</div><div class="back">Root element, metadata, visible content.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are heading tags?</div><div class="back">&lt;h1&gt; to &lt;h6&gt; for titles (h1 = biggest).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between &lt;span&gt; and &lt;div&gt;?</div><div class="back">&lt;span&gt; = inline, &lt;div&gt; = block-level.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What tag is used for hyperlinks?</div><div class="back">&lt;a href="url"&gt;Link&lt;/a&gt;</div></div></div>
+    <div class="card"><div class="inner"><div class="front">How do you display an image?</div><div class="back">&lt;img src="image.jpg" alt="text"&gt;</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are lists in HTML?</div><div class="back">Ordered &lt;ol&gt;, unordered &lt;ul&gt;, with &lt;li&gt; items.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are forms used for?</div><div class="back">Collecting user input (&lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">How do you make a table?</div><div class="back">&lt;table&gt;&lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;td&gt;Data&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</div></div></div>
+  </div>
+
+  <!-- CSS Basics -->
+  <h2>🎨 CSS Basics</h2>
+  <div class="deck">
+    <div class="card"><div class="inner"><div class="front">How to select elements in CSS?</div><div class="back">By tag (p), class (.class), ID (#id).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between inline, internal, external CSS?</div><div class="back">Inline = inside tag, internal = &lt;style&gt;, external = .css file.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is the CSS box model?</div><div class="back">Content → Padding → Border → Margin.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between relative and absolute positioning?</div><div class="back">Relative = relative to itself, Absolute = relative to parent/ancestor.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is Flexbox used for?</div><div class="back">One-dimensional layout (row/column).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is Grid used for?</div><div class="back">Two-dimensional layout (rows + columns).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">How do media queries work?</div><div class="back">Make responsive designs using @media rules.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Units difference: px, %, em, rem?</div><div class="back">px = fixed, % = relative to parent, em = relative to parent font-size, rem = relative to root font-size.</div></div></div>
+  </div>
+
+  <!-- JavaScript Basics -->
+  <h2>⚡ JavaScript Basics</h2>
+  <div class="deck">
+    <div class="card"><div class="inner"><div class="front">What is JavaScript used for?</div><div class="back">Adding interactivity and dynamic behavior to web pages.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between let, const, var?</div><div class="back">let = block scope, const = constant, var = function scope (old).</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are JavaScript data types?</div><div class="back">String, Number, Boolean, Array, Object, Null, Undefined.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">How to declare a function?</div><div class="back">function name() {} or const func = () => {}</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between == and ===?</div><div class="back">== compares value, === compares value + type.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are template literals?</div><div class="back">Strings with backticks + ${} → Hello ${name}</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Example of a for loop?</div><div class="back">for (let i=0; i&lt;5; i++) { console.log(i); }</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is DOM?</div><div class="back">Document Object Model, tree representation of HTML.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">How to select an element in JS?</div><div class="back">document.querySelector("h1")</div></div></div>
+    <div class="card"><div class="inner"><div class="front">How to change text with JS?</div><div class="back">document.querySelector("h1").innerText = "Hi";</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What is an event listener?</div><div class="back">Method that listens for user actions. Example: btn.addEventListener("click", () => alert("Clicked!"));</div></div></div>
+    <div class="card"><div class="inner"><div class="front">What are ES6 features?</div><div class="back">Template literals, Arrow functions, Destructuring, Spread/Rest, let/const.</div></div></div>
+    <div class="card"><div class="inner"><div class="front">Difference between spread and rest?</div><div class="back">Spread expands (...arr), Rest collects (function(...args)).</div></div></div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("flipped");
+      });
+    });
+  </script>
+</body>
+</html>
